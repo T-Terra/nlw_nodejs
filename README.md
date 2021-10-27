@@ -24,6 +24,10 @@ converter o código Typescript para JavaScript:
 
     npx tsc
 
+  Conversão automática:
+
+    npm add ts-node-dev -D
+
   Windows
 
     npm tsc
@@ -31,3 +35,7 @@ converter o código Typescript para JavaScript:
 ### Adiciona o Express
 
     npm add express
+
+  instalando os types da lib
+
+    npm add @types/express -D
