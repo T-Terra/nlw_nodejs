@@ -1,5 +1,29 @@
 on:
+  release:
+      types: [published]
   workflow_dispatch:
+    inputs:
+      AWS_REGION:
+        description: 'AWS Region to deploy in'
+        required: true
+        default: 'ap-south-1'
+        type: choice
+        options:
+        - ap-south-1
+        - ap-south-2
+        - ....
+      ECR_REPO:
+        description: 'ECR repository'
+        required: true
+        type: string
+      BRANCH:
+        description: 'Branch to use'
+        required: true
+        default: 'master'
+        type: choice
+        options:
+        - master
+        - develop
   
 jobs:
   log-the-inputs:
