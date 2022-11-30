@@ -1,15 +1,14 @@
 on:
   workflow_dispatch:
-    with: 'main'
-      inputs: 
-        BRANCH:
-          description: 'Branch to use'
-          required: true
-          default: 'master'
-          type: choice
-          options:
-          - master
-          - develop
+    inputs: 
+      BRANCH:
+        description: 'Branch to use'
+        required: true
+        default: 'master'
+        type: choice
+        options:
+        - master
+        - develop
   
 jobs:
   log-the-inputs:
