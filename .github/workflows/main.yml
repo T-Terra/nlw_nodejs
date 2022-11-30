@@ -1,14 +1,6 @@
 on:
   workflow_dispatch:
-    inputs: 
-      branch:
-        description: 'Release'
-        required: true
-        default: 'beta'
-        type: choice
-        options:
-        - beta
-
+  
 jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
