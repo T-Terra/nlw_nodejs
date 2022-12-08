@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: [Release condidata]
     types: [completed]
-    branches: [novabranch]
+    branches: [develop]
     
 
 jobs:
