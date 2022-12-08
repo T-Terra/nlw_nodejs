@@ -4,8 +4,6 @@ on:
   workflow_run:
     workflows: [Release condidata]
     types: [completed]
-    branches:
-      - "v*"
     
 
 jobs:
