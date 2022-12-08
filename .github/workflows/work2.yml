@@ -3,9 +3,8 @@ name: work
 on:
   workflow_run:
     workflows: [Release condidata]
-    types:
-      - completed
-    branches: novabranch
+    types: [completed]
+    branches: [novabranch]
     
 
 jobs:
