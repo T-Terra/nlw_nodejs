@@ -5,6 +5,7 @@ on:
     workflows: [Release condidata]
     types:
       - completed
+    branches: novabranch
     
 
 jobs:
