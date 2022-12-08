@@ -10,8 +10,8 @@ jobs:
       run:
         working-directory: ./
     steps:
-      - uses: fregante/setup-git-user@v1
-        name: setup git user
+#       - uses: fregante/setup-git-user@v1
+#         name: setup git user
         
       - run: |
           git tag -a v1.1.0 -m "my version 1.1.0" 
