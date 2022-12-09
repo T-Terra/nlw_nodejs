@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev src/server.ts"
+    "dev": "ts-node-dev src/server.ts",
+    "release": "standard-version && git push origin main && git push origin main --tags"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.18.2",
+    "standard-version": "^9.5.0"
   }
 }
