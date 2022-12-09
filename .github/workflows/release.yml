@@ -5,6 +5,8 @@ on:
     tags:
       - "v*"
   create:
+    tags:
+      - "v*"
 
 jobs:
   release_create:
