@@ -19,6 +19,8 @@ jobs:
       - uses: actions/create-release@v1
         name: Create Release
         id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_AUTH }}
         with:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
