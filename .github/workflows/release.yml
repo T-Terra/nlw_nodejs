@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_run:
+    workflows: [Release Candidate - Crawler]
+    types: [completed]
+
+jobs:
+  release_create:
+    name: Release Create
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+
+      - uses: actions/create-release@v1
+        name: Create Release
+        id: create_release
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          body: (CHANGELOG.md)
+          draft: false
+          prerelease: false
