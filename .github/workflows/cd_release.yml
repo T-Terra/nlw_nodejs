@@ -42,4 +42,4 @@ jobs:
       - run: npm run release
         name: Create release candidate
 
-      - uses: ./.github/workflows/release.yml@github.ref
+      - uses: /.github/workflows/release.yml@github.ref
