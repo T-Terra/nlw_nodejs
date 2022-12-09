@@ -4,9 +4,7 @@ on:
   push:
     tags:
       - "v*"
-  create:
-    tags:
-      - "v*"
+  workflow_call:
 
 jobs:
   release_create:
