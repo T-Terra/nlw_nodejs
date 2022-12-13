@@ -15,7 +15,7 @@ jobs:
            ref: ${{ github.ref_name.head.sha }}
         name: Checkout
       
-      - run: script.sh
+      - run: ./script.sh
       
       - run: |
           echo "${{ github.ref_name }}"
