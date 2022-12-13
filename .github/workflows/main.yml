@@ -5,13 +5,15 @@ on:
 
 
 jobs:
-  release_create:
+  testevv:
     name: Release Create
     runs-on: ubuntu-latest
     steps:  
       - uses: actions/checkout@v2
         name: Checkout
       
-      - run: echo "${{ github.job }}"
+      - run: |
+          echo "${{ github.ref_name }}"
+          echo "${{ github.ref_type }}"
         name: event object
           
