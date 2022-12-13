@@ -40,7 +40,7 @@ jobs:
         name: setup git user
      
       - run: |  
-               standard-version
+               npx standard-version
                git push origin main 
                git push origin main --tags
         name: Create release candidate
