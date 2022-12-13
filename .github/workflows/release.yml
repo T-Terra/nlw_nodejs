@@ -14,17 +14,14 @@ jobs:
     name: Release Create
     runs-on: ubuntu-latest
     steps:
+      - run: |
+         echo "Tag: ${{ git tag --contains HEAD }}"
+         
+      - name: Get Latest Tag
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+        
       - uses: actions/checkout@v2
         name: Checkout
-        
-      - name: Declare some variables
-        id: vars
-        shell: bash
-        run: |
-          echo "::set-output name=current_tag::$(git tag --contains)"
-          
-      - run: |
-          echo "Tag: ${{ steps.vars.outputs.current_tag }}"
 
       - uses: actions/create-release@v1
         name: Create Release
