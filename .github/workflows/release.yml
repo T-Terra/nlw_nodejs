@@ -14,10 +14,7 @@ jobs:
   release_create:
     name: Release Create
     runs-on: ubuntu-latest
-    steps:
-      - run: |
-         echo "Tag: ${{ git tag --contains }}"
-         
+    steps:   
       - name: Get Latest Tag
         uses: WyriHaximus/github-action-get-previous-tag@v1
         
