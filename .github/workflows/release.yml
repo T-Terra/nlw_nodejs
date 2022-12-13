@@ -1,15 +1,9 @@
 name: Release
 
 on:
-  create
-
-permissions:
-  actions: read
-  contents: read
-  id-token: read
-  pull-requests: read
-  repository-projects: read
-
+  push:
+    tags:
+      - "v*"
 
 
 jobs:
@@ -19,10 +13,7 @@ jobs:
     steps:  
       - uses: actions/checkout@v2
         name: Checkout
-        
-      - name: Get Latest Tag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
-        
+      
       - uses: actions/create-release@v1
         name: Create Release
         id: create_release
