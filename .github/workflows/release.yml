@@ -14,13 +14,16 @@ jobs:
   release_create:
     name: Release Create
     runs-on: ubuntu-latest
-    steps:   
+    steps:  
+      - uses: actions/checkout@v2
+        name: Checkout
+        
       - name: Get Latest Tag
         uses: WyriHaximus/github-action-get-previous-tag@v1
         
-      - uses: actions/checkout@v2
-        name: Checkout
-
+      - run: |
+          echo "Tag: ${{ git tag --contains }}"
+      
       - uses: actions/create-release@v1
         name: Create Release
         id: create_release
