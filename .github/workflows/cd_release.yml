@@ -11,7 +11,14 @@ jobs:
         shell: bash
         working-directory: ./
     steps:
-      - uses: actions/checkout@v2
+      - run: echo "TAG=$(git tag --contains)"
+        id: ref_tag
+        name: get tag HEAD^
+      
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ steps.ref_tag.outputs.TAG }}
         name: Checkout
 
       - uses: actions/setup-node@v3
@@ -39,8 +46,5 @@ jobs:
       - uses: fregante/setup-git-user@v1
         name: setup git user
      
-      - run: |  
-               npx standard-version
-               git push origin main 
-               git push origin main --tags
+      - run: npm run release
         name: Create release candidate
