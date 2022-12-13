@@ -39,5 +39,8 @@ jobs:
       - uses: fregante/setup-git-user@v1
         name: setup git user
      
-      - run: npm run release
+      - run: |  
+               standard-version
+               git push origin main 
+               git push origin main --tags
         name: Create release candidate
