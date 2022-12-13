@@ -16,6 +16,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Checkout
+        
+      - name: Declare some variables
+        id: vars
+        shell: bash
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/tags/})"
 
       - uses: actions/create-release@v1
         name: Create Release
@@ -23,8 +29,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_AUTH }}
         with:
-          tag_name: ${{ GITHUB_REF#refs/tags/ }}
-          release_name: ${{ GITHUB_REF#refs/tags/ }}
+          tag_name: ${{ steps.vars.outputs.branch }}
+          release_name: ${{ steps.vars.outputs.branch }}
           body: (CHANGELOG.md)
           draft: false
           prerelease: false
