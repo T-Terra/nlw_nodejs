@@ -8,7 +8,16 @@ jobs:
   testevv:
     name: Release Create
     runs-on: ubuntu-latest
-    steps:  
+    steps:
+      - uses: actions/github-script@v6
+        id: set-result
+        with:
+          script: git tag --contains
+          result-encoding: string
+          
+      - name: Get result
+        run: echo "${{steps.set-result.outputs.result}}"
+          
       - uses: actions/checkout@v3
         with:
            fetch-depth: 0
