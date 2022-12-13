@@ -9,16 +9,18 @@ jobs:
     name: Release Create
     runs-on: ubuntu-latest
     steps:
+      - run: echo "TAG=$(git tag --contains)"
+        id: ref_tag
+        name: get tag HEAD
+      
       - uses: actions/checkout@v3
         with:
-           fetch-depth: 0
-           ref: ${{ github.ref_name.head.sha }}
+          fetch-depth: 0
+          ref: ${{ steps.ref_tag.outputs.TAG }}
         name: Checkout
-      
-      - run: |
-          chmod +x ./script.sh
-          ./script.sh
-        shell: bash
+        
+      - run: git tag --contains
+        name: exe git command check
       
       - run: |
           echo "${{ github.ref_name }}"
