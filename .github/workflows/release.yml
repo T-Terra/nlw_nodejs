@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
   workflow_run:
     workflows: [Release condidata]
     types:
@@ -15,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-         echo "Tag: ${{ git tag --contains HEAD }}"
+         echo "Tag: ${{ git tag --contains }}"
          
       - name: Get Latest Tag
         uses: WyriHaximus/github-action-get-previous-tag@v1
