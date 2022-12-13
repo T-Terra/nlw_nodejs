@@ -33,11 +33,11 @@ jobs:
             ${{ runner.os }}-
         name: Cache node modules            
 
-      - run: npm i
-        name: Installing dependencies
+#       - run: npm i
+#         name: Installing dependencies
 
       - uses: fregante/setup-git-user@v1
         name: setup git user
 
-      - run: npm run release
-        name: Create release candidate
+#       - run: npm run release
+#         name: Create release candidate
