@@ -51,11 +51,17 @@ jobs:
         shell: bash
         working-directory: ./
     needs: generate_release
-    steps:  
+    steps:
+      - name: Get Latest Tag
+        id: latest_tag
+        # You may pin to the exact commit or the version.
+        # uses: WyriHaximus/github-action-get-previous-tag@dc52ee2c1eb91ebf1d540ea7bd2f6424fb00f573
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+      
       - uses: actions/checkout@v3
         with:
            fetch-depth: 0
-           ref: v*
+           ref: ${{ steps.latest_tag.outputs }}
         name: Checkout
 
       - uses: actions/create-release@v1
