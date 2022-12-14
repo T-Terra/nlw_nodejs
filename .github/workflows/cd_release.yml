@@ -41,8 +41,8 @@ jobs:
       - uses: fregante/setup-git-user@v1
         name: setup git user
      
-      - run: npm run release
-        name: Create release candidate
+#       - run: npm run release
+#         name: Create release candidate
         
   release_create:
     runs-on: ubuntu-latest
