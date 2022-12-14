@@ -55,7 +55,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
            fetch-depth: 0
-           ref: v*
+           ref: "v*"
         name: Checkout
 
       - uses: actions/create-release@v1
