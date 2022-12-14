@@ -1,5 +1,5 @@
 name: Deploy - Prod
-run-name: ${{ github.ref_name }}
+run-name: ${{ refs/tags/github.ref_name }}
 
 on:
   push:
