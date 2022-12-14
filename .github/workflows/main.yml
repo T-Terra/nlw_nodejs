@@ -1,4 +1,5 @@
 name: Deploy - Prod
+run-name: ${{ github.ref_name }}
 
 on:
   push:
@@ -9,38 +10,18 @@ on:
     types:
       - completed
       
-run-name: ${{ needs.get_tag.outputs.current_tag }}
 
-jobs:
-  get_tag:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./
-    outputs:
-        current_tag: ${{ steps.latest_tag.outputs.tag }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-           fetch-depth: 0
-        name: Checkout
-        
-      - name: Get Latest Tag
-        id: latest_tag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
-        
+
+jobs:   
   deploy:
     name: deploy - prod
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
-        working-directory: ./src
-    needs: get_tag
+        working-directory: ./
     steps:
       - uses: actions/checkout@v3
         with:
            fetch-depth: 0
-           ref: ${{ needs.get_tag.outputs.current_tag }}
         name: Checkout
