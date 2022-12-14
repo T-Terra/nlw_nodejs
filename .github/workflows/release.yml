@@ -30,6 +30,7 @@ jobs:
         uses: WyriHaximus/github-action-get-previous-tag@v1
         
   release_create:
+    name: Create release ${{ needs.get_tag_current.outputs.current_tag }}
     runs-on: ubuntu-latest
     defaults:
       run:
