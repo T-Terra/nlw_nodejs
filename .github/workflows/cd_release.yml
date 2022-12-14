@@ -69,8 +69,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_AUTH }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
+          tag_name: ${{ needs.generate_release.outputs.current_tag }}
+          release_name: ${{ needs.generate_release.outputs.current_tag }}
           body: (CHANGELOG.md)
           draft: false
           prerelease: false
