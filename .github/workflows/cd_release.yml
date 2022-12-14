@@ -47,7 +47,7 @@ jobs:
 #         name: Create release candidate
       - name: Get Latest Tag
         id: latest_tag
-        uses: WyriHaximus/github-action-get-previous-tag@v1 >> $GITHUB_OUTPUT
+        uses: WyriHaximus/github-action-get-previous-tag@v1
         
   release_create:
     runs-on: ubuntu-latest
