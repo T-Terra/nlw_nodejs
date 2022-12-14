@@ -11,31 +11,41 @@ on:
 
 
 jobs:
+  get_tag_current:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./
+    outputs:
+        current_tag: ${{ steps.latest_tag.outputs.tag }}
+    steps:
+      - name: Get Latest Tag
+        id: latest_tag
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+        
   release_create:
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
         working-directory: ./
+    needs: get_tag_current
     steps:
       - uses: actions/checkout@v3
         with:
            fetch-depth: 0
-           ref: ${{ steps.latest_tag.outputs.tag }}
+           ref: ${{ needs.get_tag_current.outputs.current_tag }}
         name: Checkout
       
-      - name: Get Latest Tag
-        id: latest_tag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
-
       - uses: actions/create-release@v1
         name: Create Release
         id: create_release
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_AUTH }}
         with:
-          tag_name: ${{ steps.latest_tag.outputs.tag }}
-          release_name: ${{ steps.latest_tag.outputs.tag }}
+          tag_name: ${{ needs.get_tag_current.outputs.current_tag }}
+          release_name: ${{ needs.get_tag_current.outputs.current_tag }}
           body: (CHANGELOG.md)
           draft: false
           prerelease: false
