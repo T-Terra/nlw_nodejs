@@ -1,29 +1,21 @@
-name: Teste
+name: Deploy - Prod
 
 on:
-  workflow_dispatch:
+  release:
+    types: [published]
 
 
 jobs:
-  testevv:
-    name: Release Create
+  deploy:
+    name: deploy - prod
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./
     steps:
-      - run: echo "TAG=$(git tag --contains)"
-        id: ref_tag
-        name: get tag HEAD
-      
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
-          ref: ${{ steps.ref_tag.outputs.TAG }}
+           fetch-depth: 0
         name: Checkout
-        
-      - run: git tag --contains
-        name: exe git command check
-      
-      - run: |
-          echo "${{ github.ref_name }}"
-          echo "${{ github.ref_type }}"
-        name: event object
           
