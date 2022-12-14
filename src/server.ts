@@ -3,7 +3,9 @@ import express from 'express';
 
 const app = express();
 
-app.listen(3000, () => console.log('Server is running...'));
+const port = 3000;
+
+app.listen(port, () => console.log('Server is running...'));
 
 
 app.post('/post', (req, res) => {
