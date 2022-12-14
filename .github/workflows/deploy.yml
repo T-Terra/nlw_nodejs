@@ -4,41 +4,18 @@ on:
   push:
     tags:
       - "v*"
-  workflow_run:
-    workflows: [Release]
-    types:
-      - completed
+  release:
+    types: [created]
 
-jobs:
-  get_tag:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./
-    outputs:
-        current_tag: ${{ steps.latest_tag.outputs.tag }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-           fetch-depth: 0
-        name: Checkout
-        
-      - name: Get Latest Tag
-        id: latest_tag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
-        
+jobs:        
   deploy:
-    name: ${{ needs.get_tag.outputs.current_tag }}
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
         working-directory: ./src
-    needs: get_tag
     steps:
       - uses: actions/checkout@v3
         with:
            fetch-depth: 0
-           ref: ${{ needs.get_tag.outputs.current_tag }}
         name: Checkout
