@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.17](https://github.com/T-Terra/nlw_nodejs/compare/v1.0.16...v1.0.17) (2022-12-14)
+
+
+### Bug Fixes
+
+* 🐛 resolucao de bug e remover arquivos ([b4f73fb](https://github.com/T-Terra/nlw_nodejs/commit/b4f73fb51de60751a9beff481524daf44003f95b))
+
 ### [1.0.16](https://github.com/T-Terra/nlw_nodejs/compare/v1.0.15...v1.0.16) (2022-12-14)
 
 ### [1.0.15](https://github.com/T-Terra/nlw_nodejs/compare/v1.0.14...v1.0.15) (2022-12-14)
