@@ -20,6 +20,11 @@ jobs:
     outputs:
         current_tag: ${{ steps.latest_tag.outputs.tag }}
     steps:
+      - uses: actions/checkout@v3
+        with:
+           fetch-depth: 0
+        name: Checkout
+        
       - name: Get Latest Tag
         id: latest_tag
         uses: WyriHaximus/github-action-get-previous-tag@v1
