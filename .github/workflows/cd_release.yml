@@ -10,6 +10,8 @@ jobs:
       run:
         shell: bash
         working-directory: ./
+    outputs:
+      current_tag: ${{ steps.latest_tag.outputs }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -45,9 +47,7 @@ jobs:
 #         name: Create release candidate
       - name: Get Latest Tag
         id: latest_tag
-        # You may pin to the exact commit or the version.
-        # uses: WyriHaximus/github-action-get-previous-tag@dc52ee2c1eb91ebf1d540ea7bd2f6424fb00f573
-        uses: WyriHaximus/github-action-get-previous-tag@v1
+        uses: WyriHaximus/github-action-get-previous-tag@v1 >> $GITHUB_OUTPUT
         
   release_create:
     runs-on: ubuntu-latest
@@ -60,7 +60,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
            fetch-depth: 0
-           ref: ${{ steps.latest_tag.outputs }}
+           ref: ${{  needs.generate_release.outputs.current_tag }}
         name: Checkout
 
       - uses: actions/create-release@v1
