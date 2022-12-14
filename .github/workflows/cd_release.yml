@@ -11,7 +11,7 @@ jobs:
         shell: bash
         working-directory: ./
     outputs:
-      current_tag: ${{ steps.latest_tag.outputs }}
+      current_tag: ${{ steps.latest_tag.outputs.tag }}
     steps:
       - uses: actions/checkout@v3
         with:
