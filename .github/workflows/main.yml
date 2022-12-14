@@ -8,7 +8,8 @@ on:
     workflows: [Release]
     types:
       - completed
-
+      
+run-name: ${{ needs.get_tag.outputs.current_tag }}
 
 jobs:
   get_tag:
@@ -43,5 +44,3 @@ jobs:
            fetch-depth: 0
            ref: ${{ needs.get_tag.outputs.current_tag }}
         name: Checkout
-          
-run-name: ${{ needs.get_tag.outputs.current_tag }}
