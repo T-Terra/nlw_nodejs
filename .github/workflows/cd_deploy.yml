@@ -2,10 +2,7 @@ name: Deploy - Prod
 run-name: Deploy Version ${{ github.ref_name }}
 
 on:
-  push:
-    tags:
-      - "v*"
-  create:
+  create
 
 jobs:        
   deploy:
