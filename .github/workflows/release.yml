@@ -55,6 +55,3 @@ jobs:
           body: (CHANGELOG.md)
           draft: false
           prerelease: false
-
-  run_deploy:
-    uses: ./.github/workflows/cd_deploy.yml
