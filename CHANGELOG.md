@@ -2,20 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [1.2.0](https://github.com/T-Terra/nlw_nodejs/compare/v1.0.39...v1.2.0) (2022-12-15)
-
-
-### Features
-
-* 🎸 toma v2 ([6f0cc9e](https://github.com/T-Terra/nlw_nodejs/commit/6f0cc9ec87e5f976eea685b01b5eaf38ef76d4e2))
-
-## [1.1.0](https://github.com/T-Terra/nlw_nodejs/compare/v1.0.39...v1.1.0) (2022-12-15)
-
-
-### Features
-
-* 🎸 toma v2 ([6f0cc9e](https://github.com/T-Terra/nlw_nodejs/commit/6f0cc9ec87e5f976eea685b01b5eaf38ef76d4e2))
-
 ### [1.0.39](https://github.com/T-Terra/nlw_nodejs/compare/v1.0.38...v1.0.39) (2022-12-15)
 
 ### [1.0.38](https://github.com/T-Terra/nlw_nodejs/compare/v1.0.37...v1.0.38) (2022-12-15)
