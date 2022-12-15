@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
-    "release": "standard-version && git push origin main && git push origin main --tags",
+    "release": "standard-version && git push origin master && git push origin master --tags",
     "commit": "git-cz"
   },
   "keywords": [],
