@@ -25,7 +25,7 @@ on:
 
 jobs:        
   deploy:
-    if: ${{ github.ref_name == 'master' && inputs.exe_deploy }}
+    if: ${{ github.ref_name == 'develop' && inputs.exe_deploy }}
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -38,7 +38,7 @@ jobs:
         name: Checkout
         
   teste2:
-    if: ${{ github.ref_name == 'master' && inputs.teste2 }}
+    if: ${{ github.ref_name == 'develop' && inputs.teste2 }}
     runs-on: ubuntu-latest
     defaults:
       run:
