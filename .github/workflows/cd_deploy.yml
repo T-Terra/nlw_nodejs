@@ -36,3 +36,19 @@ jobs:
         with:
            fetch-depth: 0
         name: Checkout
+        
+  teste2:
+    if: ${{ github.ref_name == 'master' && inputs.teste2 }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./src
+    steps:
+      - uses: actions/checkout@v3
+        with:
+           fetch-depth: 0
+        name: Checkout
+    
+    
+    
