@@ -10,12 +10,11 @@ on:
       - created
   workflow_dispatch:
     inputs:
-      teste1:
+      exe_deploy:
         type: boolean
         default: true
       teste2:
         type: boolean
-        default: true
       teste:
         type: choice
         description: Escolha uma opção
@@ -31,6 +30,7 @@ jobs:
       run:
         shell: bash
         working-directory: ./src
+    if: ${{ inputs.exe_deploy }}
     steps:
       - uses: actions/checkout@v3
         with:
