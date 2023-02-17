@@ -25,12 +25,12 @@ on:
 
 jobs:        
   deploy:
+    if: ${{ github.ref_name == 'master' && inputs.exe_deploy }}
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
         working-directory: ./src
-    if: ${{ inputs.exe_deploy }}
     steps:
       - uses: actions/checkout@v3
         with:
