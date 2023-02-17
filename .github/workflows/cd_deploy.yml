@@ -10,8 +10,10 @@ on:
       - created
   workflow_dispatch:
     inputs:
-      perform_deploy:
-        required: true
+      Allied:
+        type: boolean
+        default: true
+      Auditorias:
         type: boolean
         default: true
       teste:
