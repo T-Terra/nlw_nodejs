@@ -13,11 +13,10 @@ on:
       perform_deploy:
         required: true
         type: boolean
+        default: true
       teste:
         required: true
         type: choice
-          - teste22
-          - toma
 
 jobs:        
   deploy:
