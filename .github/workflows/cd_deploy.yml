@@ -1,0 +1,38 @@
+name: Deploy - Prod
+run-name: Deploy Version ${{ github.ref_name }}
+
+on:
+  push:
+    tags:
+      - "v*"
+  release:
+    types:
+      - created
+  workflow_dispatch:
+    inputs:
+      exe_deploy:
+        type: boolean
+        default: true
+      teste2:
+        type: boolean
+      teste:
+        type: choice
+        description: Escolha uma opção
+        options:
+        - foo
+        - bar
+        - baz
+
+jobs:        
+  deploy:
+    if: ${{ github.ref_name == 'master' && inputs.exe_deploy }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./src
+    steps:
+      - uses: actions/checkout@v3
+        with:
+           fetch-depth: 0
+        name: Checkout

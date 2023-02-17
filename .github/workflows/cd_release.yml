@@ -47,9 +47,9 @@ jobs:
       - run: npm run release
         name: Create release candidate
         
-      - name: Get Latest Tag
-        id: latest_tag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
+#       - name: Get Latest Tag
+#         id: latest_tag
+#         uses: WyriHaximus/github-action-get-previous-tag@v1
         
 #   release_create:
 #     runs-on: ubuntu-latest
