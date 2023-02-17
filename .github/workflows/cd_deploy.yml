@@ -16,6 +16,8 @@ on:
       teste:
         required: true
         type: choice
+          - teste22
+          - toma
 
 jobs:        
   deploy:
