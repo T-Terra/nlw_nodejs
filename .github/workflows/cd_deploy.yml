@@ -10,22 +10,15 @@ on:
       - created
   workflow_dispatch:
     inputs:
-      exe_deploy:
+      teste1:
         type: boolean
         default: true
       teste2:
         type: boolean
-      teste:
-        type: choice
-        description: Escolha uma opção
-        options:
-        - foo
-        - bar
-        - baz
 
 jobs:        
-  deploy:
-    if: ${{ github.ref_name == 'develop' && inputs.exe_deploy }}
+  teste1:
+    if: ${{ github.ref_name == 'develop' && inputs.teste1 }}
     runs-on: ubuntu-latest
     defaults:
       run:
