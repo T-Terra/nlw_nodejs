@@ -1,4 +1,4 @@
-name: Release ${{ needs.get_tag_current.outputs.current_tag }}
+name: Release ${{ github.ref_name }}
 
 on:
   push:
