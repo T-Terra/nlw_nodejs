@@ -10,7 +10,7 @@ on:
       - created
   workflow_dispatch:
     inputs:
-      teste1:
+      administracao:
         type: boolean
         default: true
       teste2:
@@ -18,7 +18,7 @@ on:
 
 jobs:        
   teste1:
-    if: ${{ github.ref_name == 'develop' && inputs.teste1 }}
+    if: ${{ github.ref_name == 'develop' && github.event.inputs.administracao == 'true' }}
     runs-on: ubuntu-latest
     defaults:
       run:
