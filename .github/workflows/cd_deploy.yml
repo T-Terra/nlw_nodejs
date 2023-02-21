@@ -31,7 +31,7 @@ jobs:
         name: Checkout
         
   teste2:
-    if: ${{ github.ref_name == 'develop' && inputs.teste2 }}
+    if: ${{ github.ref_name == 'develop' && inputs.teste2 == 'true' }}
     runs-on: ubuntu-latest
     defaults:
       run:
