@@ -18,7 +18,7 @@ on:
 
 jobs:        
   teste1:
-    if: ${{ github.ref_name == 'develop' && github.event.inputs.administracao }}
+    if: ${{ github.ref_name == 'develop' && github.event.inputs.administracao == 'true' }}
     runs-on: ubuntu-latest
     defaults:
       run:
