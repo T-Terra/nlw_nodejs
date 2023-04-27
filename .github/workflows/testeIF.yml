@@ -19,6 +19,7 @@ jobs:
     - name: prod
       if: github.event.inputs.deploy == 'producao'
       run: echo "${{ github.event.inputs.deploy }}"
-    
+      
     - name: alpha
+      if: github.event.inputs.deploy == 'alpha'
       run: echo "alpha"
