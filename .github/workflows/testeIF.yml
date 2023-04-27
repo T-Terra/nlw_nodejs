@@ -7,7 +7,7 @@ on:
         type: choice
         description: Para qual ambiente quer fazer o deploy?
         options:
-          - produção
+          - producao
           - alpha
         required: true
 
@@ -16,11 +16,8 @@ jobs:
     name: Test IF
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      
-      if: ${{ github.event.inputs.deploy }} == "produção"
     - name: prod
+      if: ${{ github.event.inputs.deploy }} == 'producao'
       run: echo "Produção"
     
     - name: alpha
