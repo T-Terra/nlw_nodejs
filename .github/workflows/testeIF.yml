@@ -13,13 +13,17 @@ on:
 
 jobs:
   deploy:
+    if: github.event.inputs.deploy == 'producao'
     name: Test IF
     runs-on: ubuntu-latest
     steps:
     - name: prod
-      if: github.event.inputs.deploy == 'producao'
-      run: echo "${{ github.event.inputs.deploy }}"
+      run: echo "producao"
       
-    - name: alpha
-      if: github.event.inputs.deploy == 'alpha'
-      run: echo "alpha"
+  deploy_alpha:
+    if: github.event.inputs.deploy == 'alpha'
+    name: alpha
+    runs-on: ubuntu-latest
+    steps:
+      - name: alpha
+        run: echo "alpha"
