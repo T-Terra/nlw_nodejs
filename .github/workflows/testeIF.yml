@@ -9,8 +9,7 @@ on:
         options:
           - produção
           - alpha
-      environment:
-        type: environment
+        required: true
 
 jobs:
   deploy:
@@ -20,5 +19,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
       
-    - name: Deploy Lambda
+      if: ${{ github.event.inputs.deploy }} == "produção"
+    - name: prod
       run: echo "Produção"
+    
+    - name: alpha
+      run: echo "alpha"
