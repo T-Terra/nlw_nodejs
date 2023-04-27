@@ -1,0 +1,23 @@
+name: Teste IF and Input
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        type: choice
+        description: Para qual ambiente quer fazer o deploy?
+        options:
+          - produção
+          - alpha
+        default: true
+
+jobs:
+  deploy:
+    name: Test IF
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Deploy Lambda
+      run: echo "Produção"
