@@ -18,7 +18,7 @@ jobs:
     steps:
     - name: prod
       if: ${{ github.event.inputs.deploy }} == 'producao'
-      run: echo "Produção"
+      run: echo "${{ github.event.inputs.deploy }}"
     
-    - name: alpha
-      run: echo "alpha"
+    #- name: alpha
+      #run: echo "alpha"
