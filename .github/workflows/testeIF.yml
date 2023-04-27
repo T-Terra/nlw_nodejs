@@ -9,7 +9,8 @@ on:
         options:
           - produção
           - alpha
-        default: true
+      environment:
+        type: environment
 
 jobs:
   deploy:
