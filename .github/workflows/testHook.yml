@@ -5,10 +5,10 @@ on:
 jobs:
   build:
     name: Build the Code 1
+    if: github.ref_name == 'develop'
     runs-on: ubuntu-latest
     steps:
       - name: build
-        if: github.ref_name == 'develop'
         run: | 
           echo "build"
           exit 1
