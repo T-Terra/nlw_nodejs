@@ -10,7 +10,7 @@ jobs:
       - name: build
         shell: bash
         run: | 
-          sleep 99999999999999
+          echo teste
 
     # build job
   test:
@@ -20,7 +20,7 @@ jobs:
       - name: Test
         shell: bash
         run: | 
-          sleep 99999999999999
+          echo teste2
     # test job
   notify:
     name: Discord Notification
@@ -37,6 +37,6 @@ jobs:
           github-token: ${{ secrets.AUTH}}
           discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
           username: 'BigChicken'
-          color-success: '#4287f5'
+          color-success: '#41E160'
           color-failure: '#EB4034'
           color-cancelled: '#808080'
