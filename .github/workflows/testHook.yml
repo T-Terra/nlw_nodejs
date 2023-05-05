@@ -37,6 +37,6 @@ jobs:
           github-token: ${{ secrets.AUTH}}
           discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
           username: 'BigChicken'
-          color-success: '#55E32B'
+          color-success: '#30FA25'
           color-failure: '#EB4034'
           color-cancelled: '#808080'
