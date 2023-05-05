@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build
-        run: echo "build"
+        run: | 
+          echo "build"
+          exit 1
     # build job
   test:
     name: Test the Code 2
