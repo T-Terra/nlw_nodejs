@@ -4,14 +4,14 @@ on:
 
 jobs:
   build:
-    name: Build the Code
+    name: Build the Code 1
     runs-on: ubuntu-latest
     steps:
       - name: build
         run: echo "build"
     # build job
   test:
-    name: Test the Code
+    name: Test the Code 2
     runs-on: ubuntu-latest
     steps:
       - name: Test
@@ -31,3 +31,6 @@ jobs:
         with:
           github-token: ${{ secrets.AUTH}}
           discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          color-success: '#4287f5'
+          color-failure: 'eb4034'
+          color-cancelled: '0x42daf5
