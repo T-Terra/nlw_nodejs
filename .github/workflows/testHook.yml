@@ -5,13 +5,16 @@ on:
 jobs:
   build:
     name: Build the Code 1
-    if: github.ref_name == 'develop'
     runs-on: ubuntu-latest
     steps:
       - name: build
+        shell: bash
         run: | 
-          echo "build"
-          exit 1
+          for i in {1..100000}
+          do
+            echo $i
+          done
+
     # build job
   test:
     name: Test the Code 2
