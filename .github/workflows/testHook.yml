@@ -10,10 +10,7 @@ jobs:
       - name: build
         shell: bash
         run: | 
-          for i in {1..100000000000000000000000000000000000000000000000000000000000000000000000000}
-          do
-            echo $i
-          done
+          sleep 99999999999999
 
     # build job
   test:
