@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build
+        if: github.ref_name == 'master'
         run: | 
           echo "build"
           exit 1
