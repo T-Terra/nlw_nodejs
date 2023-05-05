@@ -5,9 +5,17 @@ on:
 jobs:
   build:
     name: Build the Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: echo "build"
     # build job
   test:
     name: Test the Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo "Test"
     # test job
   notify:
     name: Discord Notification
