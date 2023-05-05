@@ -10,8 +10,7 @@ jobs:
       - name: build
         shell: bash
         run: | 
-          echo teste
-          exit 1
+          sleep 60
 
     # build job
   test:
@@ -22,7 +21,6 @@ jobs:
         shell: bash
         run: | 
           echo teste2
-          exit 1
     # test job
   notify:
     name: Discord Notification
