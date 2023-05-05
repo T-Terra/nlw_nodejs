@@ -36,7 +36,7 @@ jobs:
       - name: Notify
         uses: nobrayner/discord-webhook@v1
         with:
-          github-token: ${{ secrets.AUTH}}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
           username: 'BigChicken'
           color-success: '#30FA25'
