@@ -18,7 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test
-        run: echo "Test"
+        shell: bash
+        run: | 
+          sleep 99999999999999
     # test job
   notify:
     name: Discord Notification
