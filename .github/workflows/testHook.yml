@@ -10,7 +10,7 @@ jobs:
       - name: build
         shell: bash
         run: | 
-          sleep 60
+          sleep 10
 
     # build job
   test:
