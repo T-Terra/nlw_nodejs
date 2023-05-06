@@ -37,6 +37,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
           username: 'Rex Cansado'
+          avatar-url: 'https://octodex.github.com/images/heisencat.png'
           color-success: '#30FA25'
           color-failure: '#EB4034'
           color-cancelled: '#808080'
