@@ -10,11 +10,12 @@ on:
       - created
   workflow_dispatch:
     inputs:
-      administracao:
-        type: boolean
-        default: true
-      teste2:
-        type: boolean
+      name:
+        type: choice
+        description: Who to greet
+        options: 
+        - monalisa
+        - cschleiden
 
 jobs:        
   teste1:
