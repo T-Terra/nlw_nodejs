@@ -1,0 +1,29 @@
+name: Teste IF and Input
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        type: choice
+        description: Para qual ambiente quer fazer o deploy?
+        options:
+          - producao
+          - alpha
+        required: true
+
+jobs:
+  deploy:
+    if: github.event.inputs.deploy == 'producao'
+    name: Test IF
+    runs-on: ubuntu-latest
+    steps:
+    - name: prod
+      run: echo "producao"
+      
+  deploy_alpha:
+    if: github.event.inputs.deploy == 'alpha'
+    name: alpha
+    runs-on: ubuntu-latest
+    steps:
+      - name: alpha
+        run: echo "alpha"
