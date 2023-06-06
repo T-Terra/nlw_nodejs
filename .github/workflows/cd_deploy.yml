@@ -12,10 +12,10 @@ on:
     inputs:
       name:
         type: choice
-        description: Who to greet
+        description: Selecione o ambiente para deploy
         options: 
-        - monalisa
-        - cschleiden
+        - develop
+        - alpha1
 
 jobs:        
   teste1:
