@@ -10,7 +10,7 @@ on:
       - created
   workflow_dispatch:
     inputs:
-      name:
+      environment:
         type: choice
         description: Selecione o ambiente para deploy
         options: 
