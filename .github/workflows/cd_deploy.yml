@@ -2,12 +2,6 @@ name: Deploy - Prod
 run-name: Deploy Version ${{ github.ref_name }}
 
 on:
-  push:
-    tags:
-      - "v*"
-  release:
-    types:
-      - created
   workflow_dispatch:
     inputs:
       environment:
@@ -18,7 +12,8 @@ on:
         - alpha1
 
 jobs:        
-  teste1:
+  develop:
+    if: github.event.inputs.environment == 'develop'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -30,7 +25,8 @@ jobs:
            fetch-depth: 0
         name: Checkout
         
-  teste2:
+  alpha1:
+    if: github.event.inputs.environment == 'alpha1'
     runs-on: ubuntu-latest
     defaults:
       run:
