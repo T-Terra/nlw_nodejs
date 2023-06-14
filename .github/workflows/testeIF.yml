@@ -1,5 +1,5 @@
 name: Teste IF and Input
-run-name: Deploy $WORKFLOW_NAME
+run-name: Deploy ${{ env.WORKFLOW_NAME }}
 
 on:
   workflow_dispatch:
