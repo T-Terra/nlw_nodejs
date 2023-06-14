@@ -11,7 +11,7 @@ on:
         default: true
 jobs:
   deploy_prod:
-    if: github.event.inputs.production == true
+    if: github.event.inputs.production == 'true'
     name: Prod
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +19,7 @@ jobs:
       run: echo "producao"
       
   deploy_alpha:
-    if: github.event.inputs.homolog == true
+    if: github.event.inputs.homolog == 'true'
     name: alpha
     runs-on: ubuntu-latest
     steps:
