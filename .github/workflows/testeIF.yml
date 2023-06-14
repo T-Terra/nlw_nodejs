@@ -12,7 +12,7 @@ on:
 jobs:
   deploy_prod:
     if: github.event.inputs.production
-    name: Test IF
+    name: Prod
     runs-on: ubuntu-latest
     steps:
     - name: prod
