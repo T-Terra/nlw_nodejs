@@ -1,3 +1,6 @@
+env:
+  WORKFLOW_NAME: ${{ github.event.inputs.production == 'true' && 'prod' || 'homolog' }}
+
 name: Teste IF and Input ${{ env.WORKFLOW_NAME }}
 
 on:
@@ -9,9 +12,7 @@ on:
       homolog:
         type: boolean
         default: true
-env:
-  WORKFLOW_NAME: ${{ github.event.inputs.production == 'true' && 'prod' || 'homolog' }}
-  
+
 jobs:
   deploy_prod:
     if: github.event.inputs.production == 'true'
