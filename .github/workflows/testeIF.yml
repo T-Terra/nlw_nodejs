@@ -3,7 +3,7 @@ name: Teste IF and Input
 on:
   workflow_dispatch:
     inputs:
-      produção:
+      production:
         type: boolean
         default: true
       homolog:
@@ -11,7 +11,7 @@ on:
         default: true
 jobs:
   deploy_prod:
-    if: github.event.inputs.produção
+    if: github.event.inputs.production
     name: Test IF
     runs-on: ubuntu-latest
     steps:
