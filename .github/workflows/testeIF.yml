@@ -1,5 +1,5 @@
 name: Teste IF and Input
-run-name: Deploy ${{ github.workflow }}
+run-name: Deploy $WORKFLOW_NAME
 
 on:
   workflow_dispatch:
@@ -10,6 +10,9 @@ on:
       homolog:
         type: boolean
         default: true
+env:
+  WORKFLOW_NAME: ${{ github.event.inputs.production == 'true' && 'prod' || 'homolog' }}
+  
 jobs:
   deploy_prod:
     if: github.event.inputs.production == 'true'
