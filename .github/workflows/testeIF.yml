@@ -3,14 +3,12 @@ name: Teste IF and Input
 on:
   workflow_dispatch:
     inputs:
-      deploy:
-        type: choice
-        description: Para qual ambiente quer fazer o deploy?
-        options:
-          - producao
-          - alpha
-        required: true
-
+      production:
+        type: boolean
+        default: true
+      homolog:
+        type: boolean
+        default: true
 jobs:
   deploy:
     if: github.event.inputs.deploy == 'producao'
