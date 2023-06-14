@@ -1,5 +1,5 @@
 name: Teste IF and Input
-run-name: Deploy ${{ github.workflow_runs }}
+run-name: Deploy ${{ github.workflow }}
 
 on:
   workflow_dispatch:
