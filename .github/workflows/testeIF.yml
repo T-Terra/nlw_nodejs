@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: prod
-      run: echo "producao"
+      run: echo "producao ${{ env.GITHUB_JOB_NAME }}"
       
   deploy_alpha:
     if: github.event.inputs.homolog == 'true'
@@ -24,4 +24,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: alpha
-        run: echo "alpha"
+        run: echo "alpha ${{ env.GITHUB_JOB_NAME }}"
