@@ -3,7 +3,7 @@ name: Teste IF and Input
 on:
   workflow_dispatch:
     inputs:
-      production:
+      produção:
         type: boolean
         default: true
       homolog:
