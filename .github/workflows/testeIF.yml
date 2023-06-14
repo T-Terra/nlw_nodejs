@@ -10,8 +10,8 @@ on:
         type: boolean
         default: true
 jobs:
-  deploy:
-    if: github.event.inputs.deploy == 'producao'
+  deploy_prod:
+    if: github.event.inputs.produção
     name: Test IF
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +19,7 @@ jobs:
       run: echo "producao"
       
   deploy_alpha:
-    if: github.event.inputs.deploy == 'alpha'
+    if: github.event.inputs.homolog
     name: alpha
     runs-on: ubuntu-latest
     steps:
