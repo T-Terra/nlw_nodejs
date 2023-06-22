@@ -8,7 +8,7 @@ on:
     inputs:
       production:
         type: boolean
-        default: true
+        default: false
       homolog:
         type: boolean
         default: true
