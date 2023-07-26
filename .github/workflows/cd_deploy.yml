@@ -47,7 +47,7 @@ on:
 
 jobs:        
   develop:
-    if: github.event.inputs.environment == 'develop'
+    if: github.event.inputs.Audit_api == true
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -60,7 +60,7 @@ jobs:
         name: Checkout
         
   alpha1:
-    if: github.event.inputs.environment == 'alpha1'
+    if: github.event.inputs.audit_boletos == true
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -73,23 +73,23 @@ jobs:
         name: Checkout
         
         
-  notify:
-        name: Send Discord Notification
-        runs-on: ubuntu-latest
-        needs:
-          - develop
-          - alpha1
-        if: ${{ always() }}
+#   notify:
+#         name: Send Discord Notification
+#         runs-on: ubuntu-latest
+#         needs:
+#           - develop
+#           - alpha1
+#         if: ${{ always() }}
 
-        steps:        
-          - name: Notify Deploy Develop
-            uses: nobrayner/discord-webhook@v1
-            with:
-              github-token: ${{ secrets.GITHUB_TOKEN }}
-              discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
-              color-success: '#30FA25'
-              color-failure: '#EB4034'
-              color-cancelled: '#808080'
+#         steps:        
+#           - name: Notify Deploy Develop
+#             uses: nobrayner/discord-webhook@v1
+#             with:
+#               github-token: ${{ secrets.GITHUB_TOKEN }}
+#               discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
+#               color-success: '#30FA25'
+#               color-failure: '#EB4034'
+#               color-cancelled: '#808080'
     
     
     
