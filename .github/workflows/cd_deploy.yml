@@ -2,6 +2,10 @@ name: Deploy - Prod
 run-name: Deploy Version ${{ github.ref_name }}
 
 on:
+  workflow_run:
+    workflows: [Release condidata]
+    types:
+      - requested
   workflow_dispatch:
     inputs:
       environment:
