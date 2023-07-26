@@ -7,33 +7,43 @@ on:
         Audit_api:
           description: Audit Api
           type: boolean
+          default: true
         audit_boletos:
           description: Audit Boletos
           type: boolean
+          default: true
         audit_novo_cliente:
           description: Audit Novo Cliente
           type: boolean
+          default: true
         audit_certidoes:
           description: Audit Certidoes
           type: boolean
+          default: true
         audit_navigationI:
           description: Audit NavigationI
           type: boolean
+          default: true
         auditI:
           description: AuditI
           type: boolean
+          default: true
         audit_editnewI:
           description: Audit EditnewI
           type: boolean
+          default: true
         audit_createnewI:
           description: Audit CreatenewI
           type: boolean
+          default: true
         audit_createnewButtons:
           description: Audit CreatenewButtons
           type: boolean
+          default: true
         audit_relacionados:
           description: Audit Relacionados
           type: boolean
+          default: true
 
 jobs:        
   develop:
