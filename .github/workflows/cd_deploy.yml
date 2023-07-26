@@ -47,7 +47,7 @@ on:
 
 jobs:        
   develop:
-    if: github.event.inputs.Audit_api == "true"
+    if: github.event.inputs.Audit_api
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -60,7 +60,7 @@ jobs:
         name: Checkout
         
   alpha1:
-    if: github.event.inputs.audit_boletos == "true"
+    if: github.event.inputs.audit_boletos
     runs-on: ubuntu-latest
     defaults:
       run:
