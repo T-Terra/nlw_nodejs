@@ -2,18 +2,38 @@ name: Deploy - Prod
 run-name: Deploy Version ${{ github.ref_name }}
 
 on:
-  workflow_run:
-    workflows: [Release condidata]
-    types:
-      - requested
   workflow_dispatch:
-    inputs:
-      environment:
-        type: choice
-        description: Selecione o ambiente para deploy
-        options: 
-        - develop
-        - alpha1
+      inputs:
+        Audit_api:
+          description: Audit Api
+          type: boolean
+        audit_boletos:
+          description: Audit Boletos
+          type: boolean
+        audit_novo_cliente:
+          description: Audit Novo Cliente
+          type: boolean
+        audit_certidoes:
+          description: Audit Certidoes
+          type: boolean
+        audit_navigationI:
+          description: Audit NavigationI
+          type: boolean
+        auditI:
+          description: AuditI
+          type: boolean
+        audit_editnewI:
+          description: Audit EditnewI
+          type: boolean
+        audit_createnewI:
+          description: Audit CreatenewI
+          type: boolean
+        audit_createnewButtons:
+          description: Audit CreatenewButtons
+          type: boolean
+        audit_relacionados:
+          description: Audit Relacionados
+          type: boolean
 
 jobs:        
   develop:
