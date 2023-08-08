@@ -3,21 +3,8 @@ name: Mixed inputs
 on:
   workflow_dispatch:
     inputs:
-      name:
-        type: choice
-        description: Who to greet
-        options: 
-        - monalisa
-        - cschleiden
-      message:
-        required: true
-      use-emoji:
-        type: boolean
-        description: Include  emojis
-      environment:
-        type: environment
       tags:
-        description: 'Test scenario tags'
+        description: 'Versão node: by default (16)'
         default: '16'
         type: string
 
@@ -26,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Send greeting
-      run: echo "${{ github.event.inputs.message }} ${{ fromJSON('["", ""]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
     - uses: actions/setup-node@v3
       with:
           node-version: "${{ github.event.inputs.tags }}"
