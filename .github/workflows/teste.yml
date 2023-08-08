@@ -16,6 +16,10 @@ on:
         description: Include  emojis
       environment:
         type: environment
+      tags:
+        description: 'Test scenario tags'
+        required: true
+        type: string
 
 jobs:
   greet:
@@ -24,3 +28,9 @@ jobs:
     steps:
     - name: Send greeting
       run: echo "${{ github.event.inputs.message }} ${{ fromJSON('["", ""]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
+    - uses: actions/setup-node@v3
+      with:
+          node-version: github.event.inputs.tags
+          cache: 'npm'
+          cache-dependency-path: './app/package-lock.json'
+      name: Setup NodeJS
