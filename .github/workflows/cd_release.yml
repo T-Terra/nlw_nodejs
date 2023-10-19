@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Executando step 1"
+          exit 1
         
   generate_release:
       needs: get_tag_current
