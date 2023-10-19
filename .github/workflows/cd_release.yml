@@ -5,12 +5,7 @@ on:
 
 jobs:
   generate_release:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: outro workflow
-        uses: ./.github/workflows/action.yml
+      uses: ./.github/workflows/action.yml
         
 #       - name: Get Latest Tag
 #         id: latest_tag
