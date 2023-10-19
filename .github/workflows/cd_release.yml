@@ -19,7 +19,7 @@ jobs:
         name: Checkout
      
       - name: outro workflow
-        uses: ./.github/workflows/cd_deploy.yml
+        uses: ./cd_deploy.yml
         
 #       - name: Get Latest Tag
 #         id: latest_tag
