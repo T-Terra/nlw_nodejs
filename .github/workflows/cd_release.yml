@@ -13,11 +13,6 @@ jobs:
 #     outputs:
 #       current_tag: ${{ steps.latest_tag.outputs.tag }}
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-        name: Checkout
-     
       - name: outro workflow
         uses: ./.github/workflows/cd_deploy.yml
         
