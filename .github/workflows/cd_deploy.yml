@@ -3,51 +3,10 @@ run-name: Deploy Version ${{ github.ref_name }}
 
 on:
   workflow_dispatch:
-      inputs:
-        Audit_api:
-          description: Audit Api
-          type: boolean
-          default: true
-        audit_boletos:
-          description: Audit Boletos
-          type: boolean
-          default: true
-        audit_novo_cliente:
-          description: Audit Novo Cliente
-          type: boolean
-          default: true
-        audit_certidoes:
-          description: Audit Certidoes
-          type: boolean
-          default: true
-        audit_navigationI:
-          description: Audit NavigationI
-          type: boolean
-          default: true
-        auditI:
-          description: AuditI
-          type: boolean
-          default: true
-        audit_editnewI:
-          description: Audit EditnewI
-          type: boolean
-          default: true
-        audit_createnewI:
-          description: Audit CreatenewI
-          type: boolean
-          default: true
-        audit_createnewButtons:
-          description: Audit CreatenewButtons
-          type: boolean
-          default: true
-        audit_relacionados:
-          description: Audit Relacionados
-          type: boolean
-          default: true
-
+  workflow_call:
+     
 jobs:        
   develop:
-    if: github.event.inputs.Audit_api == 'true'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -60,7 +19,6 @@ jobs:
         name: Checkout
         
   alpha1:
-    if: github.event.inputs.audit_boletos == 'true'
     runs-on: ubuntu-latest
     defaults:
       run:
