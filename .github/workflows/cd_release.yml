@@ -10,11 +10,9 @@ jobs:
       run:
         shell: bash
         working-directory: ./
-#     outputs:
-#       current_tag: ${{ steps.latest_tag.outputs.tag }}
     steps:
       - name: outro workflow
-        uses: T-Terra/nlw_nodejs/.github/workflows/cd_deploy.yml@master
+        uses: ./.github/workflows/cd_deploy.yml
         
 #       - name: Get Latest Tag
 #         id: latest_tag
