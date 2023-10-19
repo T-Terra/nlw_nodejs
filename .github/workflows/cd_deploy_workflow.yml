@@ -1,4 +1,4 @@
-name: Deploy - Prod
+name: workflow segundario
 run-name: Deploy Version ${{ github.ref_name }}
 
 on:
