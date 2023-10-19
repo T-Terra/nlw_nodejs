@@ -7,10 +7,6 @@ on:
 jobs:        
   develop:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./
     steps:
       - run: echo "Rodando o workflow cd_deploy.yml"
         name: workflow call
