@@ -11,6 +11,8 @@ jobs:
         shell: bash
         working-directory: ./
     steps:
+      - uses: actions/checkout@v3
+      
       - name: outro workflow
         uses: ./.github/workflows/cd_deploy.yml
         
