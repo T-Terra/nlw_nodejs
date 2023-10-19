@@ -4,7 +4,14 @@ on:
   workflow_dispatch:
 
 jobs:
+  get_tag_current:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Executando step 1"
+        
   generate_release:
+      needs: get_tag_current
       uses: ./.github/workflows/action.yml
         
 #       - name: Get Latest Tag
