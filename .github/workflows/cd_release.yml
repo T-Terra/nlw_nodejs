@@ -1,4 +1,4 @@
-name: Release condidata
+name: workflow principal
 
 on:
   workflow_dispatch:
