@@ -13,22 +13,8 @@ jobs:
         shell: bash
         working-directory: ./src
     steps:
-      - uses: actions/checkout@v3
-        with:
-           fetch-depth: 0
-        name: Checkout
-        
-  alpha1:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./src
-    steps:
-      - uses: actions/checkout@v3
-        with:
-           fetch-depth: 0
-        name: Checkout
+      - run: echo "Rodando o workflow cd_deploy.yml"
+        name: workflow call
         
         
 #   notify:
