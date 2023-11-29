@@ -10,7 +10,7 @@ jobs:
     steps:
       - run: |
           echo "Rodando o workflow cd_deploy.yml"
-        name: workflow call
+        name: Gerando a release
         
         
 #   notify:
