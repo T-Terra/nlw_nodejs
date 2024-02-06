@@ -7,7 +7,7 @@ on:
     inputs:
       texto_do_work:
         required: true
-        description: 'Adicione (patch) ex: Patch <Número do card> ou (Virada) ex: Virada 06/02/2024'
+        description: 'Adicione um nome para a execução'
         type: string
 
 jobs:
