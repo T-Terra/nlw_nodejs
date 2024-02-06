@@ -1,7 +1,13 @@
 name: workflow principal
 
+run-name: ${{ inputs.texto_do_work }}
+
 on:
   workflow_dispatch:
+    inputs:
+      texto_do_work:
+        required: true
+        type: string
 
 jobs:
   get_tag_current:
