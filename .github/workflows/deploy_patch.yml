@@ -44,4 +44,5 @@ jobs:
 
   create_release:
     if: github.event.inputs.type_work == 'patch'
+    needs: greet
     uses: ./.github/workflows/release.yml
