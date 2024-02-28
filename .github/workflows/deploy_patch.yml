@@ -25,7 +25,7 @@ jobs:
           name: Checkout
           
   greet:
-    if: ${{ github.event.inputs.type_work == "patch" }}
+    if: github.event.inputs.type_work == 'patch'
     runs-on: ubuntu-latest
     defaults:
         run:
