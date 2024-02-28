@@ -43,7 +43,7 @@ jobs:
       name: Deploying to patch
       
     - name: Set output
-      run: echo "::set-env name=TAG_NAME::$(git describe --tags)"
+      run: echo "TAG_NAME=$(git describe --tags)" > .env
       id: tag
       if: success() 
 
