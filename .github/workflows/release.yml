@@ -1,57 +1,26 @@
 name: Release
 
 on:
-  push:
-    tags:
-      - "v*"
-  workflow_run:
-    workflows: [Release condidata]
-    types:
-      - completed
+  workflow_call:
 
 
-jobs:
-  get_tag_current:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./
-    outputs:
-        current_tag: ${{ steps.latest_tag.outputs.tag }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-           fetch-depth: 0
-        name: Checkout
-        
-      - name: Get Latest Tag
-        id: latest_tag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
-        
+jobs:      
   release_create:
-    name: Create release ${{ needs.get_tag_current.outputs.current_tag }}
+    name: Release Create
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./
-    needs: get_tag_current
+    timeout-minutes: 1
     steps:
-      - uses: actions/checkout@v3
-        with:
-           fetch-depth: 0
-           ref: ${{ needs.get_tag_current.outputs.current_tag }}
+      - uses: actions/checkout@v2
         name: Checkout
-      
+
       - uses: actions/create-release@v1
         name: Create Release
         id: create_release
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_AUTH }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ needs.get_tag_current.outputs.current_tag }}
-          release_name: ${{ needs.get_tag_current.outputs.current_tag }}
-          body: (CHANGELOG.md)
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: Por favor, verifique o [CHANGELOG.md](https://github.com/Port-Louis/front/blob/master/CHANGELOG.md) para maiores detalhes.
           draft: false
           prerelease: false
