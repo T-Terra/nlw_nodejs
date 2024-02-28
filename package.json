@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "release": "standard-version && git push origin master && git push origin master --tags",
+    "patch": "standard-version --release-as patch && git push origin master --tags",
     "commit": "git-cz"
   },
   "keywords": [],
