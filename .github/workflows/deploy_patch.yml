@@ -1,0 +1,45 @@
+name: Mixed inputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      work_name:
+        description: 'Adicione um nome para a execução (Patch ou Virada)'
+        type: string
+      type_work:
+        required: true
+        description: '(Patch ou Virada)'
+        type: choice
+        options: 
+        - patch
+        - virada
+
+jobs:
+  deploy:
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: ./app
+      steps:
+        - uses: actions/checkout@v3
+          name: Checkout
+          
+  greet:
+    if: ${{ github.event.inputs.type_work == "patch" }}
+    runs-on: ubuntu-latest
+    defaults:
+        run:
+          working-directory: ./
+    steps:
+    - uses: actions/checkout@v3
+      name: Checkout
+
+    - run: npm i
+      name: Installing dependencies
+
+    - run: npm run patch
+      name: Deploying to patch
+
+  create_release:
+    needs: [deploy, greet]
+    uses: ./.github/workflows/release.yml
