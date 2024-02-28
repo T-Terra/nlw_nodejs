@@ -1,4 +1,4 @@
-name: Mixed inputs
+name: Deploy patch
 
 on:
   workflow_dispatch:
