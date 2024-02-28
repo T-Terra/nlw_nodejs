@@ -41,5 +41,5 @@ jobs:
       name: Deploying to patch
 
   create_release:
-    needs: [deploy, greet]
+    if: github.event.inputs.type_work == 'patch'
     uses: ./.github/workflows/release.yml
