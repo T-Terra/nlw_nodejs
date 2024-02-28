@@ -2,11 +2,9 @@ name: Release
 
 on:
   workflow_call:
-    inputs:
-        tag:
-          required: true
-          type: string
-
+    outputs:
+      tag_name:
+        value: ${{ jobs.my_job.outputs.job_output1 }}
 
 jobs:      
   release_create:
