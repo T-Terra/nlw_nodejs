@@ -43,14 +43,13 @@ jobs:
       name: Deploying to patch
       
     - name: Set output
-      run: echo "TAG_NAME=$(git describe --tags)" > .env
+      run: echo "::set-output name=TAG_NAME::$(git describe --tags)"
       id: tag
-      if: success() 
 
   create_release:
     if: github.event.inputs.type_work == 'patch'
     needs: greet
     uses: ./.github/workflows/release.yml
     with:
-        tag_name: ${{ needs.tag.outputs.TAG_NAME }}
+        tag_name: ${{ needs.greet.outputs.TAG_NAME }}
       
