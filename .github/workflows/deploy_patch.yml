@@ -44,6 +44,7 @@ jobs:
       
     - name: Set output
       run: echo "::set-env name=TAG_NAME::$(git describe --tags)"
+      id: tag
       if: success() 
 
   create_release:
@@ -51,5 +52,5 @@ jobs:
     needs: greet
     uses: ./.github/workflows/release.yml
     with:
-        tag_name: ${{ env.TAG_NAME }}
+        tag_name: ${{ needs.tag.outputs.TAG_NAME }}
       
