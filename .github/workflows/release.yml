@@ -2,9 +2,10 @@ name: Release
 
 on:
   workflow_call:
-    outputs:
+    inputs:
       tag_name:
-        value: ${{ jobs.my_job.outputs.job_output1 }}
+        required: true
+        type: string
 
 jobs:      
   release_create:
@@ -21,8 +22,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ inputs.tag }}
-          release_name: Release ${{ inputs.tag }}
+          tag_name: ${{ inputs.tag_name }}
+          release_name: Release ${{ inputs.tag_name }}
           body: Por favor, verifique o [CHANGELOG.md](https://github.com/Port-Louis/front/blob/master/CHANGELOG.md) para maiores detalhes.
           draft: false
           prerelease: false
